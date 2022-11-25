@@ -1,0 +1,122 @@
+---
+title: "RWorksheet_urdas#4"
+author: "Cindy Urdas"
+date: "2022-11-24"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+***1.	The table below shows the data about shoe size and height. Create a data frame.***\
+
+```{r}
+shoesize <- c(6.5, 9.0, 8.5, 8.5, 10.5, 7.0, 9.5, 9.0, 13.0, 7.5, 10.5, 8.5, 12.0, 10.5, 13.0, 11.5, 8.5,  5.0, 10.0, 6.5, 7.5, 8.5, 10.5, 8.5, 10.5, 11.0, 9.0, 13.0)
+shoesize
+
+height <- c(66.0, 68.0, 64.5, 65.0, 70.0, 64.0, 70.0, 71.0, 72.0, 64.0, 74.0, 67.0, 71.0, 71.0, 77.0, 72.0, 59.0, 62.0, 72.0, 66.0, 64.0, 67.0, 73.0, 69.0, 72.0, 70.0, 69.0, 70.0)
+height
+
+gender <- c("F", "F", "F", "F", "M", "F", "F", "F", "M", "F", "M", "F", "M", "M", "M", "M", "F", "F", "M", "F", "F", "M", "M", "F", "M", "M", "M", "M")
+gender
+
+data.frame(shoesize,height,gender)
+
+```
+ 
+**a.	Describe the data.**\
+The higher the height, the larger the shoe size, and according to the data frame, males have the highest height and the largest shoe size compared to females.\
+
+**b.	Find the mean of shoe size and height of the respondents. Copy the codes and results.**\
+```{r}
+mean(shoesize)
+
+mean(height)
+```
+
+**c.	Is there a relationship between shoe size and height? Why?**\
+ 	Yes, because the Higher the height, the greater the shoesize.\
+ 	
+***Factors***\
+A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that ‘one is worth more than the other’. In contrast, ordinal variables do have a natural ordering.\
+Example:\
+
+## [1] M F F M\
+## Levels: F M\
+
+
+**2.	Construct character vector months to a factor with factor() and assign the result to factor_months_vector. Print out factor_months_vector and assert that R prints out the factor levels below the actual values.**\
+Consider data consisting of the names of months:\ "March","April","January","November","January", "September","October","September","November","August", "January","November","November","February","May","August",
+"July","December","August","August","September","November","February","April")\
+
+```{r}
+months_vector <- c("March","April","January","November","January",   "September","October","September","November","August",  "January","November","November","February","May","August",
+            "July","December","August","August","September","November","February","April")
+factor_months_vector <- factor(months_vector)
+factor_months_vector
+
+```
+
+**3.	Then check the summary() of the months_vector and factor_months_vector. | Interpret the results of both vectors. Are they both equally useful in this case?**\
+
+```{r}
+summary(months_vector,factor_months_vector)
+```
+
+***Create a vector and factor for the table below.***\
+
+Direction	Frequency\
+East	1\
+West	4\
+North	3\
+Note: Apply the factor function with required order of the level.\
+new_order_data <- factor(factor_data,levels = c("East","West","North"))\ print(new_order_data)\
+
+```{r}
+Direction <-c("East","West","North")
+factor_Direction <-factor(Direction) 
+factor_Direction
+
+data <-c( 1, 4, 3)
+factor_data <- factor(data)
+factor_data
+
+
+new_order_data <- factor(factor_data,levels = c("East","West","North")) 
+print(new_order_data)
+```
+
+**5.	Enter the data below in Excel with file name = import_march.csv**\
+
+***Figure 1: Excel File***\
+
+
+a.	Import the excel file into the Environment Pane using read.table() function. Write the code.\
+
+library(readxl)\
+import_march_csv <- read_excel("D:/URDAS/import_march.csv.xlsx")\
+
+
+b.	View the dataset. Write the code and its result.\
+```{r}
+library(readxl)
+import_march_csv <- read_excel("D:/URDAS/import_march.csv.xlsx")
+View(import_march_csv)
+```
+ 
+
+
+
+
+
+
+
+
+
+ 	
+
+
+
+
+
+
